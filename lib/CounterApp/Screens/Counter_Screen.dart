@@ -1,4 +1,6 @@
 import 'package:block_tutorial/CounterApp/bloc/counter_bloc.dart';
+import 'package:block_tutorial/CounterApp/bloc/counter_event.dart';
+import 'package:block_tutorial/CounterApp/bloc/counter_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -7,7 +9,6 @@ class CounterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(30.0),
@@ -37,7 +38,7 @@ class CounterPage extends StatelessWidget {
                         color: Colors.blue,
                         child: TextButton(
                             onPressed: () {
-                              context.read<CounterBloc>().add(increment());
+                              context.read<CounterBloc>().add(Increment());
                             },
                             child: Text(
                               "+",
@@ -48,7 +49,7 @@ class CounterPage extends StatelessWidget {
                         color: Colors.blue,
                         child: TextButton(
                             onPressed: () {
-                              context.read<CounterBloc>().add(decrement());
+                              context.read<CounterBloc>().add(Decrement());
                             },
                             child: Text(
                               "-",
