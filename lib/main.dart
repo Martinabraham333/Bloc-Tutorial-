@@ -1,7 +1,6 @@
 import 'package:block_tutorial/CounterApp/Screens/Counter_Screen.dart';
 import 'package:block_tutorial/CounterApp/bloc/counter_bloc.dart';
-import 'package:block_tutorial/LoginApp/bloc/login_bloc.dart';
-import 'package:block_tutorial/LoginApp/screens/loginScreen.dart';
+
 import 'package:block_tutorial/app_bloc_observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,13 +21,11 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => CounterBloc(),
         ),
-        BlocProvider(
-          create: (context) => LoginBloc(),
-        )
+     
       ],
       child: MaterialApp(
-          // home: CounterPage(),
-          home: LoginPage()),
+          home: CounterPage(),
+     ),
     );
   }
 }
